@@ -23,43 +23,43 @@ class 곰1 {
 public class MethEx06 {
 
     // 사자 -> 호랑이 공격
-    static void attackLionToTiger(사자1 unit1, 호랑이1 unit2) {
-        System.out.println(unit2.name + "가 공격당하고 있습니다.");
+    static void attack(사자1 unit1, 호랑이1 unit2) {
+        System.out.println(unit2.name + "가(이) 공격당하고 있습니다.");
+        unit2.hp = unit2.hp - unit1.attack;
+        System.out.println(unit2.name + "의 hp : " + unit2.hp);
+    }
+
+    // 사자 -> 곰 공격
+    static void attack(사자1 unit1, 곰1 unit2) {
+        System.out.println(unit2.name + "가(이) 공격당하고 있습니다.");
         unit2.hp = unit2.hp - unit1.attack;
         System.out.println(unit2.name + "의 hp : " + unit2.hp);
     }
 
     // 호랑이 -> 사자 공격
-    static void attackTigerToLion(호랑이1 unit1, 사자1 unit2) {
-        System.out.println(unit2.name + "가 공격당하고 있습니다.");
+    static void attack(호랑이1 unit1, 사자1 unit2) {
+        System.out.println(unit2.name + "가(이) 공격당하고 있습니다.");
         unit2.hp = unit2.hp - unit1.attack;
         System.out.println(unit2.name + "의 hp : " + unit2.hp);
     }
 
-    // 호랑이 -> 곰
-    static void attackTigerToBear(호랑이1 unit1, 곰1 unit2) {
-        System.out.println(unit2.name + "가 공격당하고 있습니다.");
+    // 호랑이 -> 곰 공격
+    static void attack(호랑이1 unit1, 곰1 unit2) {
+        System.out.println(unit2.name + "가(이) 공격당하고 있습니다.");
         unit2.hp = unit2.hp - unit1.attack;
         System.out.println(unit2.name + "의 hp : " + unit2.hp);
     }
 
-    // 사자 -> 곰
-    static void attackLionToBear(사자1 unit1, 곰1 unit2) {
-        System.out.println(unit2.name + "가 공격당하고 있습니다.");
+    // 곰 -> 사자 공격
+    static void attack(곰1 unit1, 사자1 unit2) {
+        System.out.println(unit2.name + "가(이) 공격당하고 있습니다.");
         unit2.hp = unit2.hp - unit1.attack;
         System.out.println(unit2.name + "의 hp : " + unit2.hp);
     }
 
-    // 곰 -> 호랑이
-    static void attackBearToTiger(곰1 unit1, 호랑이1 unit2) {
-        System.out.println(unit2.name + "가 공격당하고 있습니다.");
-        unit2.hp = unit2.hp - unit1.attack;
-        System.out.println(unit2.name + "의 hp : " + unit2.hp);
-    }
-
-    // 곰 -> 사자
-    static void attackBearToLion(곰1 unit1, 사자1 unit2) {
-        System.out.println(unit2.name + "가 공격당하고 있습니다.");
+    // 곰 -> 호랑이 공격
+    static void attack(곰1 unit1, 호랑이1 unit2) {
+        System.out.println(unit2.name + "가(이) 공격당하고 있습니다.");
         unit2.hp = unit2.hp - unit1.attack;
         System.out.println(unit2.name + "의 hp : " + unit2.hp);
     }
@@ -69,17 +69,11 @@ public class MethEx06 {
         호랑이1 tiger1 = new 호랑이1();
         곰1 bear1 = new 곰1();
 
-        // 호랑이 -> 사자 공격
-        attackTigerToLion(tiger1, lion1);
-        // 호랑이 -> 곰
-        attackTigerToBear(tiger1, bear1);
-        // 사자 -> 곰
-        attackLionToBear(lion1, bear1);
-        // 사자 -> 호랑이
-        attackLionToTiger(lion1, tiger1);
-        // 곰 -> 호랑이
-        attackBearToTiger(bear1, tiger1);
-        // 곰 -> 사자
-        attackBearToLion(bear1, lion1);
+        attack(lion1, tiger1);
+        attack(lion1, bear1);
+        attack(tiger1, lion1);
+        attack(tiger1, bear1);
+        attack(bear1, lion1);
+        attack(bear1, tiger1);
     }
 }
