@@ -5,6 +5,9 @@
         "lib/**/*.jar",
         "c:\\green_workspace\\downloads\\javaSDK-2.2.jar",
         "c:\\green_workspace\\downloads\\json-simple-1.1.1.jar",
-        "c:\\green_workspace\\downloads\\gson-2.8.5.jar"
+        "c:\\green_workspace\\downloads\\gson-2.8.5.jar",
+        "e:\\green_workspace\\downloads\\javaSDK-2.2.jar",
+        "e:\\green_workspace\\downloads\\json-simple-1.1.1.jar",
+        "e:\\green_workspace\\downloads\\gson-2.8.5.jar"
     ]
 }
