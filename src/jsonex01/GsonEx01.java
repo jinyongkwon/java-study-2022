@@ -41,6 +41,5 @@ public class GsonEx01 {
         UserDto javaUserDto = gson.fromJson(jsonUserDto, UserDto.class);
         System.out.println(javaUserDto.getUsername());
         System.out.println(javaUserDto.getPassword());
-
     }
 }

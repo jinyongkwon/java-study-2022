@@ -1,11 +1,20 @@
 package cafe;
 
 public class MenuItem {
-    public void getPrice(int num) {
+    private int Price;
+    private String Name;
 
+    public MenuItem(String name, int price) {
+        Price = price;
+        Name = name;
     }
 
-    public void getName(String name) {
-
+    public int getPrice() {
+        return Price;
     }
+
+    public String getName() {
+        return Name;
+    }
+
 }

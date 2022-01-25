@@ -118,7 +118,7 @@ public class jsonEx01 {
         List<String> hobby = Arrays.asList("농구", "도술");
         Family family = new Family(2, "홍판서", "춘섬");
         User user = new User("홍길동", 25, hobby, family);
-        // System.out.println(user.toString());
+        System.out.println(user.toString());
         // 1. json 변경 (개념 : json은 생긴게 json처럼 생긴것이지 타입은 문자열이다.)
         System.out.println(family.toJson());
         // 2. json 데이터 통신 전송!!

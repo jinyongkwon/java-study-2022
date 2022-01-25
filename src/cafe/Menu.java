@@ -3,18 +3,19 @@ package cafe;
 import java.util.List;
 
 public class Menu {
-    private List<MenuItem> sc;
+    private List<MenuItem> item;
 
-    public void choose(MenuItem item) {
-        // item.getName();
-        // item.getPrice();
+    public Menu(List<MenuItem> item) {
+        this.item = item;
     }
 
-    public List<MenuItem> getSc() {
-        return sc;
-    }
+    public MenuItem choose(String name) {
+        for (MenuItem each : item) {
+            if (each.getName().equals(name)) {
+                return each;
+            }
+        }
 
-    public void setSc(List<MenuItem> sc) {
-        this.sc = sc;
+        return null;
     }
 }
