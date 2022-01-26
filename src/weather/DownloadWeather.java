@@ -30,7 +30,7 @@ public class DownloadWeather {
         try {
             URL url = new URL(
                     "http://apis.data.go.kr/1360000/VilageFcstInfoService_2.0/getUltraSrtNcst?serviceKey=dKBYvXftyqx9iXdnLhqwWVL4GXucV5LSvUvQ%2FttIrjjWo%2FDEwK9KG9MwmrWoaKTgamp8VUXTr%2F%2BZp5acNayxZw%3D%3D&pageNo=1&numOfRows=1000&dataType=JSON&base_date="
-                            + data + "&base_time=" + time + "&nx=97&ny=75");
+                            + data + "&base_time=" + time + "&nx=97&ny=74");
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
 
             BufferedReader br = new BufferedReader(
@@ -53,6 +53,6 @@ public class DownloadWeather {
 
     public static void main(String[] args) {
         Map<String, String> weatheMap = DownloadWeather.getWeatherList();
-        System.out.println("부산진구 현재시간기준 온도는 " + weatheMap.get("온도") + "도 입니다");
+        System.out.println("부산사하구 현재시간기준 온도는 " + weatheMap.get("온도") + "도 입니다");
     }
 }

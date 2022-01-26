@@ -22,7 +22,7 @@ public class Test01 {
             BufferedReader br = new BufferedReader(
                     new InputStreamReader(conn.getInputStream(), "utf-8"));
 
-            String responseJson = br.readLine();
+            String responseJson = br.readLine(); // 버퍼 비우기
             Gson gson = new Gson();
             ResponseDto dto = gson.fromJson(responseJson, ResponseDto.class);
             List<AirportDto> result = dto.getResponse().getBody().getItems().getItem();

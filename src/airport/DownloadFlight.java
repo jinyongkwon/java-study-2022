@@ -35,7 +35,7 @@ public class DownloadFlight {
             return result;
         } catch (Exception e) {
 
-            System.out.println("항공편 조회중 오류가 발생했습니다.");
+            System.out.println("항공편 조회중 오류가 발생했습니다." + e.getMessage());
         }
         return null;
     }

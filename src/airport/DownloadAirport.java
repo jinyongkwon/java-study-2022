@@ -31,7 +31,7 @@ public class DownloadAirport {
             }
             System.out.println("중단점");
         } catch (Exception e) {
-            System.out.println("항공사 조회중 오류가 발생했습니다.");
+            System.out.println("항공사 조회중 오류가 발생했습니다." + e.getMessage());
         }
         return airportMap;
     }
