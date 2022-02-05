@@ -1,4 +1,4 @@
-package airport;
+package airport.generic;
 
 import java.util.List;
 

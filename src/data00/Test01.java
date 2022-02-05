@@ -8,11 +8,13 @@ import java.util.List;
 
 import com.google.gson.Gson;
 
+import data00.ResponseDto.Response.Body.Items.FlightItem;
+
 public class Test01 {
     public static void main(String[] args) {
         try {
             URL url = new URL(
-                    "http://openapi.tago.go.kr/openapi/service/DmstcFlightNvgInfoService/getArprtList?serviceKey=wJmmW29e3AEUjwLioQR22CpmqS645ep4S8TSlqtSbEsxvnkZFoNe7YG1weEWQHYZ229eNLidnI2Yt5EZ3Stv7g%3D%3D&_type=json");
+                    "http://openapi.tago.go.kr/openapi/service/DmstcFlightNvgInfoService/getFlightOpratInfoList?serviceKey=dKBYvXftyqx9iXdnLhqwWVL4GXucV5LSvUvQ%2FttIrjjWo%2FDEwK9KG9MwmrWoaKTgamp8VUXTr%2F%2BZp5acNayxZw%3D%3D&numOfRows=10&pageNo=1&depAirportId=NAARKJJ&arrAirportId=NAARKPC&depPlandTime=20220128&airlineId=AAR&_type=json");
 
             // conn -> Byte Stream 선!!
             HttpURLConnection conn = (HttpURLConnection) url.openConnection(); // 리턴타입을 부모로 맞춘 이유가 뭘쓸지 모르기때문에
@@ -25,8 +27,8 @@ public class Test01 {
             String responseJson = br.readLine(); // 버퍼 비우기
             Gson gson = new Gson();
             ResponseDto dto = gson.fromJson(responseJson, ResponseDto.class);
-            List<AirportDto> result = dto.getResponse().getBody().getItems().getItem();
-            // System.out.println(dto);
+            List<FlightItem> result = dto.getResponse().getBody().getItems().getItem();
+            // System.out.println(dto.getResponse().getBody().getItems().getItem().get(0).getAirlineNm());
             System.out.println(result);
         } catch (Exception e) {
             System.out.println("주소 입력이 잘못되었습니다.");

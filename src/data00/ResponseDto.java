@@ -42,7 +42,7 @@ public class ResponseDto<T> {
 
                 @AllArgsConstructor
                 @Data
-                class Item {
+                public class FlightItem {
                     private String airlineNm;
                     private String arrAirportNm;
                     private String arrPlandTime;
@@ -51,6 +51,7 @@ public class ResponseDto<T> {
                     private int economyCharge;
                     private int prestigeCharge;
                     private String vihicleId;
+
                 }
 
                 @AllArgsConstructor

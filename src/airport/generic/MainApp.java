@@ -1,9 +1,9 @@
-package airport;
+package airport.generic;
 
 import java.util.List;
 import java.util.Scanner;
 
-import airport.ResponseDto.Response.Body.Items.FlightItem;
+import airport.generic.ResponseDto.Response.Body.Items.FlightItem;
 
 public class MainApp {
     public static void main(String[] args) {

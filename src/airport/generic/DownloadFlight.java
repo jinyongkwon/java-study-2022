@@ -1,4 +1,4 @@
-package airport;
+package airport.generic;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
@@ -9,7 +9,7 @@ import java.util.Map;
 
 import com.google.gson.Gson;
 
-import airport.ResponseDto.Response.Body.Items.FlightItem;
+import airport.generic.ResponseDto.Response.Body.Items.FlightItem;
 
 public class DownloadFlight {
     public static List<FlightItem> getFlightList(
