@@ -24,7 +24,7 @@ public class Test02 {
             Gson gson = new Gson();
             AirportDto dto = gson.fromJson(responseJson, AirportDto.class);
             List<Item> result = dto.getResponse().getBody().getItems().getItem();
-            // System.out.println(result);
+            System.out.println(Item.class);
 
             Map<String, String> airportMap = new HashMap<>();
             for (int i = 0; i < result.size(); i++) {

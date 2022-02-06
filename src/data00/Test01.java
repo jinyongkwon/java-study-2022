@@ -2,17 +2,21 @@ package data00;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.lang.reflect.Type;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.util.List;
+import java.util.Set;
+import java.util.Map.Entry;
 
 import com.google.gson.Gson;
-
-import data00.ResponseDto.Response.Body.Items.FlightItem;
+import com.google.gson.reflect.TypeToken;
 
 public class Test01 {
     public static void main(String[] args) {
         try {
+            Type type = TypeToken.getParameterized(ResponseDto.class, FlightItem.class).getType();
+
             URL url = new URL(
                     "http://openapi.tago.go.kr/openapi/service/DmstcFlightNvgInfoService/getFlightOpratInfoList?serviceKey=dKBYvXftyqx9iXdnLhqwWVL4GXucV5LSvUvQ%2FttIrjjWo%2FDEwK9KG9MwmrWoaKTgamp8VUXTr%2F%2BZp5acNayxZw%3D%3D&numOfRows=10&pageNo=1&depAirportId=NAARKJJ&arrAirportId=NAARKPC&depPlandTime=20220128&airlineId=AAR&_type=json");
 
@@ -26,7 +30,8 @@ public class Test01 {
 
             String responseJson = br.readLine(); // 버퍼 비우기
             Gson gson = new Gson();
-            ResponseDto dto = gson.fromJson(responseJson, ResponseDto.class);
+            System.out.println(type.getTypeName());
+            ResponseDto<FlightItem> dto = gson.fromJson(responseJson, type);
             List<FlightItem> result = dto.getResponse().getBody().getItems().getItem();
             // System.out.println(dto.getResponse().getBody().getItems().getItem().get(0).getAirlineNm());
             System.out.println(result);
